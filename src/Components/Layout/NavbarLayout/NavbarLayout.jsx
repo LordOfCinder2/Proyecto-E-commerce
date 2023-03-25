@@ -8,19 +8,19 @@ const NavbarLayout = () => {
 				to="/login"
 				className={({ isActive }) => (isActive ? 'activeNavbar' : 'navbar')}
 			>
-				Ir al login
+				<button>Ir al login</button>
 			</NavLink>
 			<NavLink
 				to="/shop"
 				className={({ isActive }) => (isActive ? 'activeNavbar' : 'navbar')}
 			>
-				Tienda
+				<button>Tienda</button>
 			</NavLink>
 			<NavLink
 				to="/cart"
 				className={({ isActive }) => (isActive ? 'activeNavbar' : 'navbar')}
 			>
-				Ir al carrito
+				<button>Ir al carrito</button>
 			</NavLink>
 			<Outlet />
 		</div>

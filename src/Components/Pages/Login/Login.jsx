@@ -27,7 +27,7 @@ const Login = () => {
 		Swal.fire({
 			position: 'top-end',
 			icon: 'success',
-			title: 'Your work has been saved',
+			title: 'Bienvenido a la tienda',
 			showConfirmButton: false,
 			timer: 1500,
 		})
