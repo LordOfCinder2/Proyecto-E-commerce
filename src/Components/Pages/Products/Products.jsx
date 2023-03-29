@@ -4,7 +4,7 @@ import ProductCard from '../../Common/ProductCard/ProductCard'
 
 const Products = ({deleteProductById, items}) => {
 	return (
-		<div>
+		<div className='products'>
 			<Link to='/create-product'>
 				<button>Agregar nuevo producto</button>
 			</Link>

@@ -3,7 +3,7 @@ import EditFormContainer from '../EditForm/EditForm.container'
 
 const ProductDetail = ({ product , updateProductById, changeShowFormState, showForm}) => {
 	return (
-		<div>
+		<div className='product-detail'>
 			<h1>Nombre: {product.name}</h1>
 			<h2>Precio: ${product.price}</h2>
 			<h3>Stock disponible: {product.stock}</h3>

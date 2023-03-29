@@ -3,7 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom'
 
 const NavbarLayout = () => {
 	return (
-		<div>
+		<div className='nav-bar'>
 			<NavLink
 				to="/login"
 				className={({ isActive }) => (isActive ? 'activeNavbar' : 'navbar')}

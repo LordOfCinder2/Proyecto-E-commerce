@@ -2,7 +2,7 @@ import React from 'react'
 
 const EditForm = ({ handleSubmit, handleChange, data, product }) => {
 	return (
-		<div>
+		<div className='edit-form'>
 			<form
 				action=""
 				onSubmit={(e) => {

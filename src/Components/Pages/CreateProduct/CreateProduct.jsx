@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { createProduct } from '../../../services/productServices'
+import CreateProductContainer from './CreateProduct.container'
 
 const CreateProduct = () => {
 	const [newProduct, setNewProduct] = useState({
@@ -28,29 +28,7 @@ const CreateProduct = () => {
 	}
 
 	return (
-		<div>
-			<form action="" onSubmit={handleSubmit}>
-				<input
-					type="text"
-					name="name"
-					placeholder="nombre del producto"
-					onChange={handleChange}
-				/>
-				<input
-					type="text"
-					name="price"
-					placeholder="precio del producto"
-					onChange={handleChange}
-				/>
-				<input
-					type="text"
-					name="img"
-					placeholder="img del producto"
-					onChange={handleChange}
-				/>
-				<button type="submit">Crear</button>
-			</form>
-		</div>
+		<CreateProductContainer handleSubmit={handleSubmit} handleChange={handleChange}/>
 	)
 }
 

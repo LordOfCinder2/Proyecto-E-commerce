@@ -14,7 +14,7 @@ import Swal from 'sweetalert2'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
 import React from 'react'
 import { useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 const Login = () => {
@@ -25,11 +25,11 @@ const Login = () => {
 
 	const dispararAlerta = () => {
 		Swal.fire({
-			position: 'top-end',
+			position: 'center',
 			icon: 'success',
 			title: 'Bienvenido a la tienda',
 			showConfirmButton: false,
-			timer: 1500,
+			timer: 1000,
 		})
         navigate('/shop')
 	}

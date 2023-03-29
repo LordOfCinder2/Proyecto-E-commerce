@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ProductDetailContainer from '../../Pages/ProductDetail/ProductDetail.container'
 
 const ProductCard = ({ item, deleteProductById, updateProductById }) => {
 	return (
-		<div key={item.id} style={{ border: '2px solid white' }}>
+		<div key={item.id} style={{ border: '2px solid white' }} className='product-card'>
 			<h2>{item.name}</h2>
 			<h3>{item.price}</h3>
 			<img src={item.img} alt="" style={{ width: '200px', height: '200px' }} />
