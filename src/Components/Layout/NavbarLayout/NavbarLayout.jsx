@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import { CartContext } from '../../../context/CartContext'
 
 const NavbarLayout = () => {
+	const { cart } = useContext(CartContext)
 	return (
-		<div className='nav-bar'>
+		<div className="nav-bar">
 			<NavLink
 				to="/login"
 				className={({ isActive }) => (isActive ? 'activeNavbar' : 'navbar')}
@@ -22,6 +24,7 @@ const NavbarLayout = () => {
 			>
 				<button>Ir al carrito</button>
 			</NavLink>
+			<h3>Carrito: {cart.length}</h3>
 			<Outlet />
 		</div>
 	)

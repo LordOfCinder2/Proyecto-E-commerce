@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ProductDetail from './ProductDetail'
 import { useParams } from 'react-router-dom'
 import { updateProduct } from '../../../services/productServices'
 import { productInstance } from '../../../services/productInstance'
-import EditFormContainer from '../EditForm/EditForm.container'
+import { CartContext } from '../../../context/CartContext'
 
 const ProductDetailContainer = () => {
 	const [product, setProduct] = useState({})

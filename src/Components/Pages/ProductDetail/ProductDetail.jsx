@@ -1,9 +1,15 @@
 import React from 'react'
+import ItemCount from '../../Common/ItemCount/ItemCount'
 import EditFormContainer from '../EditForm/EditForm.container'
 
-const ProductDetail = ({ product , updateProductById, changeShowFormState, showForm}) => {
+const ProductDetail = ({
+	product,
+	updateProductById,
+	changeShowFormState,
+	showForm,
+}) => {
 	return (
-		<div className='product-detail'>
+		<div className="product-detail">
 			<h1>Nombre: {product.name}</h1>
 			<h2>Precio: ${product.price}</h2>
 			<h3>Stock disponible: {product.stock}</h3>
@@ -12,7 +18,14 @@ const ProductDetail = ({ product , updateProductById, changeShowFormState, showF
 			<img src={product.img} alt="" />
 
 			<button onClick={changeShowFormState}>Editar</button>
-			{showForm && <EditFormContainer product={product} updateProductById={updateProductById} />}
+			
+			{showForm && (
+				<EditFormContainer
+					product={product}
+					updateProductById={updateProductById}
+				/>
+			)}
+			<ItemCount product={product}/>
 		</div>
 	)
 }

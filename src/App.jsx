@@ -8,24 +8,31 @@ import Login from './Components/Pages/Login/Login'
 import NavbarLayout from './Components/Layout/NavbarLayout/NavbarLayout'
 import FooterLayout from './Components/Layout/FooterLayout/FooterLayout'
 import ProductDetailContainer from './Components/Pages/ProductDetail/ProductDetail.container'
+import CartContextProvider from './context/CartContext'
+import CartContainer from './Components/Pages/Cart/Cart.container'
 
 function App() {
 	return (
 		<div className="App">
 			<BrowserRouter>
-				<Routes>
-					<Route path="/login" element={<Login />} />
-					<Route element={<NavbarLayout />}>
-						<Route path="/" element={<Home />} />
-						<Route element={<FooterLayout />}>
-							<Route path="/cart" element={<h2>Carrito</h2>} />
-							<Route path="/shop" element={<ProductsContainer />} />
-							<Route path="/create-product" element={<CreateProduct />} />
-							<Route path='/product-detail/:id' element={<ProductDetailContainer/>}/>
+				<CartContextProvider>
+					<Routes>
+						<Route path="/login" element={<Login />} />
+						<Route element={<NavbarLayout />}>
+							<Route path="/" element={<Home />} />
+							<Route element={<FooterLayout />}>
+								<Route path="/cart" element={<CartContainer/>} />
+								<Route path="/shop" element={<ProductsContainer />} />
+								<Route path="/create-product" element={<CreateProduct />} />
+								<Route
+									path="/product-detail/:id"
+									element={<ProductDetailContainer />}
+								/>
+							</Route>
 						</Route>
-					</Route>
-					<Route path="*" element={<h1>Not Found</h1>} />
-				</Routes>
+						<Route path="*" element={<h1>Not Found</h1>} />
+					</Routes>
+				</CartContextProvider>
 			</BrowserRouter>
 		</div>
 	)
