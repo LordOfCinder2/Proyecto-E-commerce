@@ -1,10 +1,9 @@
 import React from 'react'
 
-const Cart = ({ cart }) => {
-	console.log(cart)
+const Cart = ({ state }) => {
 	return (
 		<div>
-			{cart.map((item) => (
+			{state.cart.map((item) => (
 				<div key={item.id}>
 					<h3>{item.name}</h3>
 				</div>

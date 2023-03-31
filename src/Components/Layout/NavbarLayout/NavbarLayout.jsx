@@ -1,10 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
-import { CartContext } from '../../../context/CartContext'
+import { CartContextReducer } from '../../../context/CartContextReducer'
 
 const NavbarLayout = () => {
-	const { cart } = useContext(CartContext)
-	return (
+	const { state, dispatch } = useContext(CartContextReducer)
+
+	useEffect(() => {
+		dispatch({ type: 'GET_TOTAL_QUANTITY' })
+	}, [state.cart])
+
+	return (<div>
+		
 		<div className="nav-bar">
 			<NavLink
 				to="/login"
@@ -24,9 +30,10 @@ const NavbarLayout = () => {
 			>
 				<button>Ir al carrito</button>
 			</NavLink>
-			<h3>Carrito: {cart.length}</h3>
-			<Outlet />
+			<h3>Carrito: {state.totalQuantity}</h3>
 		</div>
+			<Outlet />
+	</div>
 	)
 }
 

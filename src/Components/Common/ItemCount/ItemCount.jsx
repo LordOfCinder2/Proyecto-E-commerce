@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react'
 import { CartContext } from '../../../context/CartContext'
+import { CartContextReducer } from '../../../context/CartContextReducer'
 
 const ItemCount = ({ product }) => {
-	const [counter, setCounter] = useState(0)
-	const { addToCart } = useContext(CartContext)
+	const [counter, setCounter] = useState(1)
+	const { dispatch } = useContext(CartContextReducer)
 	const onAdd = () => {
 		let obj = { ...product, quantity: counter }
-		addToCart(obj)
+		// addToCart(obj)
+		dispatch({ type: 'ADD_TO_CART', payload: obj })
 	}
 	return (
 		<div>

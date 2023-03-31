@@ -8,14 +8,14 @@ import Login from './Components/Pages/Login/Login'
 import NavbarLayout from './Components/Layout/NavbarLayout/NavbarLayout'
 import FooterLayout from './Components/Layout/FooterLayout/FooterLayout'
 import ProductDetailContainer from './Components/Pages/ProductDetail/ProductDetail.container'
-import CartContextProvider from './context/CartContext'
 import CartContainer from './Components/Pages/Cart/Cart.container'
+import CartContextReducerProvider from './context/CartContextReducer'
 
 function App() {
 	return (
 		<div className="App">
 			<BrowserRouter>
-				<CartContextProvider>
+				<CartContextReducerProvider>
 					<Routes>
 						<Route path="/login" element={<Login />} />
 						<Route element={<NavbarLayout />}>
@@ -32,7 +32,7 @@ function App() {
 						</Route>
 						<Route path="*" element={<h1>Not Found</h1>} />
 					</Routes>
-				</CartContextProvider>
+				</CartContextReducerProvider>
 			</BrowserRouter>
 		</div>
 	)
