@@ -1,6 +1,9 @@
 import React, { useContext, useEffect } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import { CartContextReducer } from '../../../context/CartContextReducer'
+import { Button } from '@mui/material'
+import styles from './Navbar.module.css'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const NavbarLayout = () => {
 	const { state, dispatch } = useContext(CartContextReducer)
@@ -10,27 +13,30 @@ const NavbarLayout = () => {
 	}, [state.cart])
 
 	return (<div>
-		
-		<div className="nav-bar">
+		<div className={styles.header}>
+		<div className={styles.navBar}>
 			<NavLink
 				to="/login"
-				className={({ isActive }) => (isActive ? 'activeNavbar' : 'navbar')}
+				className={({ isActive }) => (isActive ? 'activePage' : 'Page')}
 			>
-				<button>Ir al login</button>
+				<Button variant='outlined'>
+					Ir al login
+					</Button>
 			</NavLink>
 			<NavLink
 				to="/shop"
-				className={({ isActive }) => (isActive ? 'activeNavbar' : 'navbar')}
+				className={({ isActive }) => (isActive ? 'activePage' : 'Page')}
 			>
-				<button>Tienda</button>
+				<Button variant='outlined'>Tienda</Button>
 			</NavLink>
 			<NavLink
 				to="/cart"
-				className={({ isActive }) => (isActive ? 'activeNavbar' : 'navbar')}
+				className={({ isActive }) => (isActive ? 'activePage' : 'Page')}
 			>
-				<button>Ir al carrito</button>
+				<Button variant='outlined'>Ir al carrito</Button>
 			</NavLink>
-			<h3>Carrito: {state.totalQuantity}</h3>
+		</div>
+			<h3><ShoppingCartIcon/>{state.totalQuantity} </h3>
 		</div>
 			<Outlet />
 	</div>
