@@ -1,0 +1,19 @@
+
+.products{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card-container{
+    padding: 10px;
+    /* display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.boton-agregar{
+    align-self: center;
+}

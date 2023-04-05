@@ -42,7 +42,19 @@
       "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c90078f0527945a38322ae9e01057d44_9366/Botines_X_Speedportal.3_Terreno_Firme_Verde_GW8460_01_standard_hover.jpg",
       "id": 5,
       "stock": "2",
-      "description": "hola"
+      "description": "deporte"
+    },
+    {
+      "name": "pipo",
+      "price": 150,
+      "img": "https://www.shutterstock.com/image-photo/vintage-red-shoes-on-white-260nw-92008067.jpg",
+      "id": 6
+    },
+    {
+      "name": "jhfgdc",
+      "price": 150000,
+      "img": "https://www.shutterstock.com/image-photo/vintage-red-shoes-on-white-260nw-92008067.jpg",
+      "id": 7
     }
   ]
 }

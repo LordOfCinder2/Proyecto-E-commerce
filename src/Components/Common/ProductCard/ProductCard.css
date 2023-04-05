@@ -1,0 +1,14 @@
+
+.product-card {
+	border: 2px solid steelblue;
+    color: steelblue;
+    font-family: 'Roboto';
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    text-transform: uppercase;
+}
+img{
+    width: 100px;
+    height: 100px;
+}

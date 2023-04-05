@@ -1,4 +1,9 @@
 import React, { createContext, useReducer } from 'react'
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 
 export const CartContextReducer = createContext()
 
@@ -28,12 +33,15 @@ function reducer(state, action) {
 		case 'CLEAR_CART':
 			return { ...state, cart: [] }
 		case 'GET_TOTAL_PRICE':
-			return { ...state, totalPrice: 0 }
+			let totalPrice = state.cart.reduce((acc, item) => {
+				return acc + item.price * item.quantity
+			}, 0)
+			return { ...state, totalPrice: totalPrice }
 		case 'GET_TOTAL_QUANTITY':
-			let total = state.cart.reduce((acc, item) => {
+			let totalQuantity = state.cart.reduce((acc, item) => {
 				return acc + item.quantity
 			}, 0)
-			return { ...state, totalQuantity: total }
+			return { ...state, totalQuantity: totalQuantity }
 		default:
 			return state
 	}

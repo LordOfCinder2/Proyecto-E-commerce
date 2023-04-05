@@ -1,0 +1,8 @@
+.footer{
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    color: aliceblue;
+    font-family: 'Roboto';
+    background-color: steelblue;
+}

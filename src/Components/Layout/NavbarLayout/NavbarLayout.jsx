@@ -21,7 +21,7 @@ const NavbarLayout = () => {
 						to="/login"
 						className={({ isActive }) => (isActive ? 'active-page' : 'page')}
 					>
-						<Button className='botones'>Ir al login</Button>
+						<Button className='botones' id='botones'>Ir al login</Button>
 					</NavLink>
 					<NavLink
 						to="/shop"

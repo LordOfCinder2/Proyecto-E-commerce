@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CreateProductContainer = () => {
+const CreateProductContainer = ({handleChange, handleSubmit}) => {
 	return (
 		<div className='create-product'>
 			<form action="" onSubmit={handleSubmit}>

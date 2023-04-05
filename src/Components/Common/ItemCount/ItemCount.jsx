@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import { CartContext } from '../../../context/CartContext'
 import { CartContextReducer } from '../../../context/CartContextReducer'
 
 const ItemCount = ({ product }) => {
